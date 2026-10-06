@@ -3,7 +3,7 @@
     <ui:VisualElement name="Background" style="flex-grow: 1; -unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Sprites/autumn.jpg?fileID=21300000&amp;guid=6b612c50be3460243b4335264e4b5a7a&amp;type=3#autumn&quot;);" />
     <ui:VisualElement name="LowerBar" style="flex-grow: 1; position: absolute; top: 1006px; left: -14px; width: 1940px; height: 74px; -unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgb(123, 123, 123); opacity: 0.45;" />
     <ui:VisualElement name="LowerBarIcons" style="flex-grow: 1; position: absolute; bottom: 1px; width: 1953px; height: 70px; left: -14px;">
-        <ui:Button name="Start" class="startButton" style="width: 72px; height: 50px; bottom: 6px; left: 22px; background-image: url(&quot;project://database/Assets/Sprites/menu.png?fileID=21300000&amp;guid=e0660c04daa3ec145b4b169f55f466d4&amp;type=3#menu&quot;); background-size: 86% 100%;" />
+        <ui:Button name="Start" class="startButton" style="width: 72px; height: 50px; bottom: 6px; left: 22px; background-image: url(&quot;project://database/Assets/Sprites/menu.png?fileID=21300000&amp;guid=e0660c04daa3ec145b4b169f55f466d4&amp;type=3#menu&quot;); background-size: 86% 100%; border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
         <ui:TextField placeholder-text="Type here to search" name="SeartchBar" class="searchBar" style="left: 122px; bottom: 4px;" />
         <ui:Button name="Caret" class="startButton" style="width: 51px; height: 40px; bottom: 19px; left: 1527px; background-image: url(&quot;project://database/Assets/Sprites/right-arrow-angle.png?fileID=21300000&amp;guid=56ac0fe45cac62a4b929671e32bbfb97&amp;type=3#right-arrow-angle&quot;); rotate: -90deg;" />
         <ui:Button name="WiFi" class="startButton" style="width: 51px; height: 40px; bottom: 19px; left: 1581px; background-image: url(&quot;project://database/Assets/Sprites/icons8-wi-fi-48.png?fileID=21300000&amp;guid=6197618cc3f82f54ab99145e6ca362a8&amp;type=3#icons8-wi-fi-48&quot;); rotate: 0;" />
@@ -16,4 +16,76 @@
     <ui:VisualElement name="Trash" style="flex-grow: 1; position: absolute; bottom: 842px; left: 16px; width: 106px; height: 104px; background-image: url(&quot;project://database/Assets/Sprites/Trash.png?fileID=21300000&amp;guid=c4293ef67f8d3484ba9b65cfb4969cda&amp;type=3#Trash&quot;);" />
     <ui:VisualElement name="Chrome" style="flex-grow: 1; position: absolute; bottom: 692px; left: 16px; width: 106px; height: 104px; background-image: url(&quot;project://database/Assets/Sprites/chrome.png?fileID=21300000&amp;guid=8dce46a0c157a7c4aa5989fe6f44b8fc&amp;type=3#chrome&quot;);" />
     <ui:VisualElement name="Doc" style="flex-grow: 1; position: absolute; bottom: 551px; left: 16px; width: 106px; height: 104px; background-image: url(&quot;project://database/Assets/Sprites/doc.png?fileID=21300000&amp;guid=6de8108c4d1b17644847c22afaf2f98c&amp;type=3#doc&quot;);" />
+    <ui:VisualElement name="Windows" style="flex-grow: 1; position: absolute; width: 1229px; height: 750px; left: 444px; bottom: 239px;">
+        <ui:VisualElement name="ComputerWin" style="flex-grow: 1; position: absolute; width: 1188px; height: 773px; background-color: rgb(32, 32, 32); display: none; visibility: visible;">
+            <ui:ScrollView vertical-scroller-visibility="Auto" horizontal-scroller-visibility="Hidden" touch-scroll-type="Clamped" focusable="false" vertical-page-size="10" nested-interaction-kind="ForwardScrolling" language-direction="Inherit" mouse-wheel-scroll-size="18" elastic-animation-interval-ms="1" style="width: 247px; height: 770px; position: absolute; background-color: rgb(22, 22, 22); bottom: 0; color: rgb(255, 255, 255); background-size: 100% 100%; align-items: flex-start;">
+                <ui:VisualElement name="thisPC" style="flex-grow: 1; bottom: 30px;">
+                    <ui:VisualElement name="3dimage" style="flex-grow: 1; bottom: -92px; width: 31px; height: 30px; background-image: url(&quot;project://database/Assets/Sprites/computer.png?fileID=21300000&amp;guid=a28982e058e82cf46abf3fb4f504a1f9&amp;type=3#computer&quot;); left: 6px;" />
+                    <ui:Label text="This PC" name="3d" style="width: 204px; height: 61px; bottom: -50px; color: rgb(255, 255, 255); font-size: 25px; left: 42px;" />
+                    <ui:VisualElement name="3dparent" style="flex-grow: 1; bottom: 30px; left: 30px;">
+                        <ui:VisualElement name="3dimage" style="flex-grow: 1; bottom: -92px; width: 31px; height: 30px; background-image: url(&quot;project://database/Assets/Sprites/PC%20Icons/3d-modeling.png?fileID=21300000&amp;guid=f0c51f53e9adf39449ac5d268a9332eb&amp;type=3#3d-modeling&quot;); left: 6px;" />
+                        <ui:Label text="3D Objects" name="3d" style="width: 204px; height: 61px; bottom: -50px; color: rgb(255, 255, 255); font-size: 25px; left: 42px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="desktopParent" style="flex-grow: 1; bottom: 30px; left: 30px;">
+                        <ui:VisualElement name="3dimage" style="flex-grow: 1; bottom: -92px; width: 31px; height: 30px; background-image: url(&quot;project://database/Assets/Sprites/PC%20Icons/computer.png?fileID=21300000&amp;guid=d09cb86b2f50d424ea2ac97a04272ee5&amp;type=3#computer&quot;); left: 6px;" />
+                        <ui:Label text="Desktop" name="Desktop" style="width: 204px; height: 61px; bottom: -50px; color: rgb(255, 255, 255); font-size: 25px; left: 42px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="docParent" style="flex-grow: 1; bottom: 30px; left: 30px;">
+                        <ui:VisualElement name="3dimage" style="flex-grow: 1; bottom: -92px; width: 31px; height: 30px; background-image: url(&quot;project://database/Assets/Sprites/PC%20Icons/documentation.png?fileID=21300000&amp;guid=697a18750ce02694195d6514fabf2111&amp;type=3#documentation&quot;); left: 6px;" />
+                        <ui:Label text="Documents" name="Documents" style="width: 204px; height: 61px; bottom: -50px; color: rgb(255, 255, 255); font-size: 25px; left: 42px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="dowParent" style="flex-grow: 1; bottom: 30px; left: 30px;">
+                        <ui:VisualElement name="3dimage" style="flex-grow: 1; bottom: -92px; width: 31px; height: 30px; background-image: url(&quot;project://database/Assets/Sprites/PC%20Icons/download.png?fileID=21300000&amp;guid=4793dea3a7dd67f4aa74012207b571da&amp;type=3#download&quot;); left: 6px;" />
+                        <ui:Label text="Downloads" name="Downloads" style="width: 204px; height: 61px; bottom: -50px; color: rgb(255, 255, 255); font-size: 25px; left: 42px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="musParent" style="flex-grow: 1; bottom: 30px; left: 30px;">
+                        <ui:VisualElement name="3dimage" style="flex-grow: 1; bottom: -92px; width: 31px; height: 30px; background-image: url(&quot;project://database/Assets/Sprites/PC%20Icons/music-note.png?fileID=21300000&amp;guid=3db461ef340711446b61417a8aa667c2&amp;type=3#music-note&quot;); left: 6px;" />
+                        <ui:Label text="Music" name="music" style="width: 204px; height: 61px; bottom: -50px; color: rgb(255, 255, 255); font-size: 25px; left: 42px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="picParent" style="flex-grow: 1; bottom: 30px; left: 30px;">
+                        <ui:VisualElement name="3dimage" style="flex-grow: 1; bottom: -92px; width: 31px; height: 30px; background-image: url(&quot;project://database/Assets/Sprites/PC%20Icons/picture.png?fileID=21300000&amp;guid=cada5f30d415f0c4dad84b518fbe19ed&amp;type=3#picture&quot;); left: 6px;" />
+                        <ui:Label text="Pictures" name="pic" style="width: 204px; height: 61px; bottom: -50px; color: rgb(255, 255, 255); font-size: 25px; left: 42px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="vidParent" style="flex-grow: 1; bottom: 30px; left: 30px;">
+                        <ui:VisualElement name="3dimage" style="flex-grow: 1; bottom: -92px; width: 31px; height: 30px; background-image: url(&quot;project://database/Assets/Sprites/PC%20Icons/play.png?fileID=21300000&amp;guid=64f569d2f1f77f34aa0ed4d9b5ecae01&amp;type=3#play&quot;); left: 6px;" />
+                        <ui:Label text="Videos" name="vid" style="width: 204px; height: 61px; bottom: -50px; color: rgb(255, 255, 255); font-size: 25px; left: 42px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="cParent" style="flex-grow: 1; bottom: 30px; left: 30px;">
+                        <ui:VisualElement name="3dimage" style="flex-grow: 1; bottom: -92px; width: 31px; height: 30px; background-image: url(&quot;project://database/Assets/Sprites/PC%20Icons/compact-disk.png?fileID=21300000&amp;guid=fab2efa3780812b4190bda24f3f0ef70&amp;type=3#compact-disk&quot;); left: 6px;" />
+                        <ui:Label text="Local Disk C" name="c" style="width: 204px; height: 61px; bottom: -50px; color: rgb(255, 255, 255); font-size: 25px; left: 42px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="dParent" style="flex-grow: 1; bottom: 30px; left: 30px;">
+                        <ui:VisualElement name="3dimage" style="flex-grow: 1; bottom: -92px; width: 31px; height: 30px; background-image: url(&quot;project://database/Assets/Sprites/PC%20Icons/compact-disk.png?fileID=21300000&amp;guid=fab2efa3780812b4190bda24f3f0ef70&amp;type=3#compact-disk&quot;); left: 6px;" />
+                        <ui:Label text="Local Disk D" name="d" style="width: 204px; height: 61px; bottom: -50px; color: rgb(255, 255, 255); font-size: 25px; left: 42px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="eParent" style="flex-grow: 1; bottom: 30px; left: 30px;">
+                        <ui:VisualElement name="3dimage" style="flex-grow: 1; bottom: -92px; width: 31px; height: 30px; background-image: url(&quot;project://database/Assets/Sprites/PC%20Icons/compact-disk.png?fileID=21300000&amp;guid=fab2efa3780812b4190bda24f3f0ef70&amp;type=3#compact-disk&quot;); left: 6px;" />
+                        <ui:Label text="Local Disk E" name="e" style="width: 204px; height: 61px; bottom: -50px; color: rgb(255, 255, 255); font-size: 25px; left: 42px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:ScrollView>
+            <ui:VisualElement name="TileBar" style="flex-grow: 1; position: absolute; width: 1127px; height: 40px; bottom: 731px; background-color: rgb(77, 77, 77); left: 7px;" />
+            <ui:VisualElement name="CImage" style="flex-grow: 1; position: absolute; left: 288px; top: 180px; width: 68px; height: 68px; background-image: url(&quot;project://database/Assets/Sprites/PC%20Icons/compact-disk.png?fileID=21300000&amp;guid=fab2efa3780812b4190bda24f3f0ef70&amp;type=3#compact-disk&quot;);">
+                <ui:Label text="Local Disk (C:)" name="CImage" style="left: 88px; background-color: rgb(32, 32, 32); color: rgb(255, 255, 255); font-size: 21px; width: 131px; bottom: 6px;" />
+                <ui:ProgressBar value="36.9" style="left: 77px; background-color: rgb(0, 0, 0); -unity-text-outline-color: rgb(0, 0, 0); color: rgb(0, 0, 0); width: 241px; -unity-background-image-tint-color: rgb(0, 0, 0); bottom: 6px; height: auto; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="DImage" style="flex-grow: 1; position: absolute; left: 728px; top: 180px; width: 68px; height: 68px; background-image: url(&quot;project://database/Assets/Sprites/PC%20Icons/compact-disk.png?fileID=21300000&amp;guid=fab2efa3780812b4190bda24f3f0ef70&amp;type=3#compact-disk&quot;);">
+                <ui:Label text="Local Disk (D:)" name="CImage" style="left: 88px; background-color: rgb(32, 32, 32); color: rgb(255, 255, 255); font-size: 21px; width: 131px; bottom: 6px;" />
+                <ui:ProgressBar value="67.6" style="left: 77px; background-color: rgb(255, 255, 255); -unity-text-outline-color: rgb(0, 0, 0); color: rgb(0, 0, 0); width: 241px; -unity-background-image-tint-color: rgb(0, 0, 0); bottom: 6px; height: auto;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="EImage" style="flex-grow: 1; position: absolute; left: 288px; top: 340px; width: 68px; height: 68px; background-image: url(&quot;project://database/Assets/Sprites/PC%20Icons/compact-disk.png?fileID=21300000&amp;guid=fab2efa3780812b4190bda24f3f0ef70&amp;type=3#compact-disk&quot;); bottom: 23px;">
+                <ui:Label text="Local Disk (E:)" name="CImage" style="left: 88px; background-color: rgb(32, 32, 32); color: rgb(255, 255, 255); font-size: 21px; width: 131px; bottom: 6px;" />
+                <ui:ProgressBar value="11.8" style="left: 77px; background-color: rgb(255, 255, 255); -unity-text-outline-color: rgb(0, 0, 0); color: rgb(0, 0, 0); width: 241px; -unity-background-image-tint-color: rgb(0, 0, 0); bottom: 6px; height: auto;" />
+            </ui:VisualElement>
+            <ui:Button text="X" name="X" style="position: absolute; left: 1132px; width: 48px; height: 42px; font-size: 37px; background-color: rgba(32, 32, 32, 0); -unity-text-outline-color: rgba(0, 0, 0, 0); color: rgb(255, 255, 255); -unity-background-image-tint-color: rgba(0, 0, 0, 0);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="DocWin" style="flex-grow: 1; background-color: rgb(32, 32, 32); position: relative;">
+            <ui:VisualElement name="TileBar" style="flex-grow: 1; position: absolute; width: 1221px; height: 61px; background-color: rgb(96, 96, 96); left: 5px; bottom: 688px;">
+                <ui:Label text="Edit" name="Edit" style="font-size: 25px; width: 55px; bottom: -15px; color: rgb(255, 255, 255); left: 11px; flex-direction: column;" />
+                <ui:Label text="Edit" name="Edit" style="font-size: 25px; width: 55px; bottom: 30px; color: rgb(255, 255, 255); left: 80px; flex-direction: column;" />
+                <ui:Label text="Edit" name="Edit" style="font-size: 25px; width: 55px; bottom: 75px; color: rgb(255, 255, 255); left: 150px; flex-direction: column;" />
+                <ui:Label text="Edit" name="Edit" style="font-size: 25px; width: 55px; bottom: 120px; color: rgb(255, 255, 255); left: 212px; flex-direction: column;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
 </ui:UXML>
