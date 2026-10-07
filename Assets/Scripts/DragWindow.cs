@@ -3,8 +3,10 @@ using UnityEngine.UIElements;
 
 public class DragWindow : MonoBehaviour
 {
-	private VisualElement window;
-	private VisualElement dragArea;
+	private VisualElement root;
+
+	private VisualElement draggingWindow;
+	private VisualElement draggingArea;
 
 	private bool dragging;
 
@@ -13,41 +15,55 @@ public class DragWindow : MonoBehaviour
 
 	private void OnEnable()
 	{
-		var root = GetComponent<UIDocument>().rootVisualElement;
+		root = GetComponent<UIDocument>().rootVisualElement;
 
-		window = root.Q<VisualElement>("ComputerWin");
-		dragArea = root.Q<VisualElement>("TileBar");
+		RegisterDragArea("TileBar", "ComputerWin");
+		RegisterDragArea("TileBarDoc", "DocWin");
+		RegisterDragArea("TabsBar", "ChromeWin");
+		RegisterDragArea("TileBarTrash", "TrashWin");
+	}
 
-		if (dragArea != null)
-		{
-			dragArea.RegisterCallback<PointerDownEvent>(OnPointerDown);
-			dragArea.RegisterCallback<PointerMoveEvent>(OnPointerMove);
-			dragArea.RegisterCallback<PointerUpEvent>(OnPointerUp);
-		}
-		else
-		{
-			Debug.Log("Drag area is null");
-		}
+	private void RegisterDragArea(string dragAreaName, string windowName)
+	{
+		var dragArea = root.Q<VisualElement>(dragAreaName);
+		var window = root.Q<VisualElement>(windowName);
+
+		if (dragArea == null || window == null)
+			return;
+
+		// Store the window reference on the drag area.
+		dragArea.userData = window;
+
+		dragArea.RegisterCallback<PointerDownEvent>(OnPointerDown);
+		dragArea.RegisterCallback<PointerMoveEvent>(OnPointerMove);
+		dragArea.RegisterCallback<PointerUpEvent>(OnPointerUp);
 	}
 
 	private void OnPointerDown(PointerDownEvent evt)
 	{
+		draggingArea = evt.currentTarget as VisualElement;
+		draggingWindow = draggingArea.userData as VisualElement;
+
+		if (draggingWindow == null)
+			return;
+
 		dragging = true;
 
 		startMousePosition = evt.position;
-		startWindowPosition = window.transform.position;
+		startWindowPosition = draggingWindow.transform.position;
 
-		dragArea.CapturePointer(evt.pointerId);
+		draggingArea.CapturePointer(evt.pointerId);
 	}
 
 	private void OnPointerMove(PointerMoveEvent evt)
 	{
-		if (!dragging)
+		if (!dragging || draggingWindow == null)
 			return;
 
 		Vector2 mouseDelta = (Vector2)evt.position - startMousePosition;
 
-		window.transform.position = startWindowPosition + mouseDelta;
+		draggingWindow.transform.position =
+			startWindowPosition + mouseDelta;
 	}
 
 	private void OnPointerUp(PointerUpEvent evt)
@@ -57,16 +73,32 @@ public class DragWindow : MonoBehaviour
 
 		dragging = false;
 
-		dragArea.ReleasePointer(evt.pointerId);
+		if (draggingArea != null &&
+			draggingArea.HasPointerCapture(evt.pointerId))
+		{
+			draggingArea.ReleasePointer(evt.pointerId);
+		}
+
+		draggingArea = null;
+		draggingWindow = null;
 	}
 
 	private void OnDisable()
 	{
-		if (dragArea != null)
-		{
-			dragArea.UnregisterCallback<PointerDownEvent>(OnPointerDown);
-			dragArea.UnregisterCallback<PointerMoveEvent>(OnPointerMove);
-			dragArea.UnregisterCallback<PointerUpEvent>(OnPointerUp);
-		}
+		UnregisterDragArea("TileBar");
+		UnregisterDragArea("TileBarDoc");
+		UnregisterDragArea("TileBarBrowser");
+	}
+
+	private void UnregisterDragArea(string dragAreaName)
+	{
+		var dragArea = root?.Q<VisualElement>(dragAreaName);
+
+		if (dragArea == null)
+			return;
+
+		dragArea.UnregisterCallback<PointerDownEvent>(OnPointerDown);
+		dragArea.UnregisterCallback<PointerMoveEvent>(OnPointerMove);
+		dragArea.UnregisterCallback<PointerUpEvent>(OnPointerUp);
 	}
 }

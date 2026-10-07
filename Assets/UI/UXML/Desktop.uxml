@@ -79,13 +79,142 @@
             </ui:VisualElement>
             <ui:Button text="X" name="X" style="position: absolute; left: 1132px; width: 48px; height: 42px; font-size: 37px; background-color: rgba(32, 32, 32, 0); -unity-text-outline-color: rgba(0, 0, 0, 0); color: rgb(255, 255, 255); -unity-background-image-tint-color: rgba(0, 0, 0, 0);" />
         </ui:VisualElement>
-        <ui:VisualElement name="DocWin" style="flex-grow: 1; background-color: rgb(32, 32, 32); position: relative;">
-            <ui:VisualElement name="TileBar" style="flex-grow: 1; position: absolute; width: 1221px; height: 61px; background-color: rgb(96, 96, 96); left: 5px; bottom: 688px;">
-                <ui:Label text="Edit" name="Edit" style="font-size: 25px; width: 55px; bottom: -15px; color: rgb(255, 255, 255); left: 11px; flex-direction: column;" />
-                <ui:Label text="Edit" name="Edit" style="font-size: 25px; width: 55px; bottom: 30px; color: rgb(255, 255, 255); left: 80px; flex-direction: column;" />
-                <ui:Label text="Edit" name="Edit" style="font-size: 25px; width: 55px; bottom: 75px; color: rgb(255, 255, 255); left: 150px; flex-direction: column;" />
-                <ui:Label text="Edit" name="Edit" style="font-size: 25px; width: 55px; bottom: 120px; color: rgb(255, 255, 255); left: 212px; flex-direction: column;" />
+        <ui:VisualElement name="DocWin" style="flex-grow: 1; background-color: rgb(32, 32, 32); position: relative; display: none;">
+            <ui:VisualElement name="TileBarDoc" style="flex-grow: 1; position: absolute; width: 1221px; height: 61px; background-color: rgb(96, 96, 96); left: 5px; bottom: 688px;">
+                <ui:TextField hide-placeholder-on-focus="false" multiline="true" class="unity-base-field__input" style="position: absolute; left: -4px; bottom: -690px; width: 1227px; height: 686px; background-color: rgb(32, 32, 32); -unity-background-image-tint-color: rgb(255, 255, 255); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); color: rgb(0, 0, 0); flex-wrap: wrap; flex-direction: row; -unity-text-align: upper-left; text-overflow: clip; transition-property: visibility; transition-duration: 5s; transition-timing-function: ease-in-out; transition-delay: 0s; font-size: 30px; align-items: stretch; white-space: normal;" />
+                <ui:Label text="Edit" name="Edit" style="font-size: 25px; width: 55px; bottom: -3px; color: rgb(255, 255, 255); left: 76px; flex-direction: row; position: absolute;" />
+                <ui:Label text="File" name="File" style="font-size: 25px; width: 55px; bottom: -3px; color: rgb(255, 255, 255); left: 162px; flex-direction: row; position: absolute;" />
+                <ui:Label text="View" name="View" style="font-size: 25px; width: 55px; bottom: -3px; color: rgb(255, 255, 255); left: 248px; flex-direction: row; position: absolute;" />
+                <ui:Label text="Help" name="Help" style="font-size: 25px; width: 55px; bottom: -3px; color: rgb(255, 255, 255); left: 343px; flex-direction: row; position: absolute;" />
+                <ui:Label text="New Document - Doc" name="NewDocText" style="font-size: 20px; width: 55px; bottom: 29px; color: rgb(255, 255, 255); left: 45px; flex-direction: row; position: absolute;" />
+                <ui:VisualElement name="DocImage" style="flex-grow: 1; position: absolute; width: 33px; height: 30px; background-image: url(&quot;project://database/Assets/Sprites/DocIcon/notepad.png?fileID=21300000&amp;guid=351e33287ce6dee4d83a0f90ff42d0a1&amp;type=3#notepad&quot;); left: 11px;" />
+                <ui:Button text="X" name="DocExit" style="position: absolute; left: 1154px; width: 48px; height: 42px; font-size: 37px; background-color: rgba(32, 32, 32, 0); -unity-text-outline-color: rgba(0, 0, 0, 0); color: rgb(255, 255, 255); -unity-background-image-tint-color: rgba(0, 0, 0, 0);" />
             </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="ChromeWin" style="flex-grow: 1; background-color: rgb(32, 32, 32); display: none;">
+            <ui:VisualElement name="TabsBar" style="height: 40px; flex-direction: row; align-items: center; background-color: rgb(255, 255, 255);">
+                <ui:Button name="Tab1" style="width: 193px; background-color: rgb(99, 99, 99); border-top-left-radius: 12px; border-top-right-radius: 12px; border-bottom-right-radius: 12px; border-bottom-left-radius: 12px;" />
+                <ui:Button name="AddTabButton" style="width: 40px; height: 32px; background-image: url(&quot;project://database/Assets/Sprites/ChromeIcon/add.png?fileID=21300000&amp;guid=d2da4a50a5721494fa5f8cb8a1be2e56&amp;type=3#add&quot;); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
+                <ui:Button name="ChromeExit" style="width: 40px; height: 32px; background-image: url(&quot;project://database/Assets/Sprites/ChromeIcon/reject.png?fileID=21300000&amp;guid=d705ef32e305bf745b5361cb7d327135&amp;type=3#reject&quot;); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); left: 919px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="BrowserToolbar" style="height: 50px; flex-direction: row; align-items: center; padding-left: 8px; padding-right: 8px; background-color: rgb(45, 45, 45);">
+                <ui:VisualElement name="BackButton" style="width: 36px; height: 36px; background-image: url(&quot;project://database/Assets/Sprites/ChromeIcon/back.png?fileID=21300000&amp;guid=6e2372c2752fce14fa5f02d8c50fefc4&amp;type=3#back&quot;);" />
+                <ui:VisualElement name="ForwardButton" style="width: 36px; height: 36px; background-image: url(&quot;project://database/Assets/Sprites/ChromeIcon/back.png?fileID=21300000&amp;guid=6e2372c2752fce14fa5f02d8c50fefc4&amp;type=3#back&quot;); rotate: 180deg;" />
+                <ui:VisualElement name="RefreshButton" style="width: 36px; height: 36px; background-image: url(&quot;project://database/Assets/Sprites/ChromeIcon/refresh.png?fileID=21300000&amp;guid=14126ddbb0023f648a9a025a5e9bd94f&amp;type=3#refresh&quot;);" />
+                <ui:VisualElement name="HomeButton" style="width: 36px; height: 36px; background-image: url(&quot;project://database/Assets/Sprites/ChromeIcon/home-button.png?fileID=21300000&amp;guid=1a53ce2c58b4dbc41bf35b67497984c1&amp;type=3#home-button&quot;);" />
+                <ui:TextField name="SearchBar" style="flex-grow: 1; height: 34px; margin-left: 8px; margin-right: 8px;" />
+                <ui:VisualElement name="MenuButton" style="width: 36px; height: 36px; background-image: url(&quot;project://database/Assets/Sprites/menu.png?fileID=21300000&amp;guid=e0660c04daa3ec145b4b169f55f466d4&amp;type=3#menu&quot;);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="BrowserContent" style="flex-grow: 1;">
+                <ui:VisualElement name="SearchBar" style="flex-grow: 1; justify-content: center; align-items: center;">
+                    <ui:Label text="Google" name="Google" style="font-size: 100px; margin-bottom: 15px; color: rgb(255, 255, 255);" />
+                    <ui:TextField name="GoogleSearchBar" style="width: 926px; height: 83px; left: auto; border-top-left-radius: 55px; border-top-right-radius: 55px; border-bottom-right-radius: 55px; border-bottom-left-radius: 55px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="TrashWin" style="flex-grow: 1; background-color: rgb(32, 32, 32); display: none;">
+            <ui:VisualElement name="TileBarTrash" style="height: 32px; flex-direction: row; background-color: rgb(45, 45, 45);">
+                <ui:Label text="Recycle Bin" style="flex-grow: 1; unity-font-style: bold; -unity-text-align: middle-left; padding-left: 12px; color: rgb(255, 255, 255);" />
+                <ui:Button name="MinimizeButton" text="—" style="width: 46px; height: 32px;" />
+                <ui:Button name="MaximizeButton" text="□" style="width: 46px; height: 32px;" />
+                <ui:Button name="TrashExit" text="×" style="width: 46px; height: 32px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Toolbar" style="height: 40px; flex-direction: row; background-color: rgb(38, 38, 38); align-items: center;">
+                <ui:Button name="BackButton" text="‹" style="width: 40px; height: 32px;" />
+                <ui:Button name="ForwardButton" text="›" style="width: 40px; height: 32px;" />
+                <ui:VisualElement name="AddressBar" style="flex-grow: 1; height: 30px; margin-left: 8px; margin-right: 8px; background-color: rgb(55, 55, 55); flex-direction: row; align-items: center;">
+                    <ui:Label text="🗑" style="margin-left: 8px; margin-right: 8px; color: rgb(255, 255, 255);" />
+                    <ui:Label text="Recycle Bin" style="color: rgb(255, 255, 255);" />
+                </ui:VisualElement>
+                <ui:Button name="SearchButton" text="🔍" style="width: 40px; height: 32px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="MainArea" style="flex-grow: 1; flex-direction: row;">
+                <ui:VisualElement name="NavigationPane" style="width: 220px; background-color: rgb(37, 37, 37); padding-top: 12px;">
+                    <ui:Label text="Quick access" style="padding-left: 18px; margin-bottom: 8px; color: rgb(180, 180, 180);" />
+                    <ui:Button text="Desktop" name="DesktopItem" style="height: 32px; unity-text-align: middle-left; padding-left: 18px;" />
+                    <ui:Button text="Downloads" name="DownloadsItem" style="height: 32px; unity-text-align: middle-left; padding-left: 18px;" />
+                    <ui:Button text="Documents" name="DocumentsItem" style="height: 32px; unity-text-align: middle-left; padding-left: 18px;" />
+                    <ui:Button text="Pictures" name="PicturesItem" style="height: 32px; unity-text-align: middle-left; padding-left: 18px;" />
+                    <ui:Label text="This PC" style="padding-left: 18px; margin-top: 16px; margin-bottom: 8px; color: rgb(180, 180, 180);" />
+                    <ui:Button text="🖥  This PC" name="ThisPCItem" style="height: 32px; unity-text-align: middle-left; padding-left: 18px;" />
+                    <ui:Button text="💾  Local Disk (C:)" name="DiskItem" style="height: 32px; unity-text-align: middle-left; padding-left: 18px;" />
+                    <ui:Button text="🗑  Recycle Bin" name="RecycleBinItem" style="height: 32px; unity-text-align: middle-left; padding-left: 18px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Content" style="flex-grow: 1; background-color: rgb(32, 32, 32);">
+                    <ui:VisualElement name="CommandBar" style="height: 42px; flex-direction: row; align-items: center; background-color: rgb(32, 32, 32); padding-left: 8px;">
+                        <ui:Button name="EmptyRecycleBin" text="Empty Recycle Bin" style="height: 32px;" />
+                        <ui:Button name="RestoreAll" text="Restore all items" style="height: 32px; margin-left: 4px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="FileHeader" style="height: 32px; flex-direction: row; background-color: rgb(42, 42, 42); align-items: center;">
+                        <ui:Label text="Name" style="width: 45%; padding-left: 12px; color: rgb(255, 255, 255);" />
+                        <ui:Label text="Original location" style="width: 25%; color: rgb(255, 255, 255);" />
+                        <ui:Label text="Date deleted" style="width: 20%; color: rgb(255, 255, 255);" />
+                        <ui:Label text="Size" style="width: 10%; color: rgb(255, 255, 255);" />
+                    </ui:VisualElement>
+                    <ui:ScrollView name="FileList" style="flex-grow: 1; background-color: rgb(32, 32, 32);">
+                        <ui:VisualElement name="EmptyState" style="flex-grow: 1; align-items: center; justify-content: center;">
+                            <ui:Label text="Recycle Bin is empty" style="font-size: 16px; color: rgb(180, 180, 180);" />
+                        </ui:VisualElement>
+                    </ui:ScrollView>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="StatusBar" style="height: 28px; background-color: rgb(38, 38, 38); flex-direction: row; align-items: center;">
+                <ui:Label name="ItemCount" text="0 items" style="padding-left: 12px; color: rgb(170, 170, 170);" />
+                <ui:VisualElement style="flex-grow: 1;" />
+                <ui:Label name="StorageInfo" style="padding-right: 12px; color: rgb(170, 170, 170);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="StartWin" style="flex-grow: 1; left: -444px; bottom: -165px; height: 427px; position: absolute; width: 878px; background-color: rgb(32, 32, 32); display: none;">
+            <ui:VisualElement name="StartHeader" style="height: 54px; width: 100%; flex-direction: row; align-items: center; padding-left: 18px; padding-right: 18px;">
+                <ui:Label text="Start" style="font-size: 20px; color: rgb(245, 245, 245); -unity-font-style: bold; flex-grow: 1;" />
+                <ui:Label text="☰" style="font-size: 22px; color: rgb(220, 220, 220); width: 32px; unity-text-align: middle-center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="StartContent" style="flex-grow: 1; flex-direction: row;">
+                <ui:VisualElement name="AppList" style="width: 270px; height: 100%; padding-left: 18px; padding-right: 12px;">
+                    <ui:Label text="Recently added" style="font-size: 12px; color: rgb(160, 160, 160); margin-bottom: 8px;" />
+                    <ui:Button text="File Explorer" name="FileExplorerButton" style="height: 38px; margin-bottom: 3px; -unity-text-align: middle-left; color: rgb(235, 235, 235); background-color: rgba(0, 0, 0, 0); border-width: 0;" />
+                    <ui:Button text="Settings" name="SettingsButton" style="height: 38px; margin-bottom: 3px; -unity-text-align: middle-left; color: rgb(235, 235, 235); background-color: rgba(0, 0, 0, 0); border-width: 0;" />
+                    <ui:Button text="Photos" name="PhotosButton" style="height: 38px; margin-bottom: 3px; -unity-text-align: middle-left; color: rgb(235, 235, 235); background-color: rgba(0, 0, 0, 0); border-width: 0;" />
+                    <ui:Label text="All apps" style="font-size: 12px; color: rgb(160, 160, 160); margin-top: 12px; margin-bottom: 8px;" />
+                    <ui:Button text="▸  Calculator" style="height: 34px; margin-bottom: 2px; -unity-text-align: middle-left; color: rgb(220, 220, 220); background-color: rgba(0, 0, 0, 0); border-width: 0;" />
+                    <ui:Button text="▸  Calendar" style="height: 34px; margin-bottom: 2px; -unity-text-align: middle-left; color: rgb(220, 220, 220); background-color: rgba(0, 0, 0, 0); border-width: 0;" />
+                    <ui:Button text="▸  Mail" style="height: 34px; margin-bottom: 2px; -unity-text-align: middle-left; color: rgb(220, 220, 220); background-color: rgba(0, 0, 0, 0); border-width: 0;" />
+                    <ui:Button text="▸  Microsoft Edge" style="height: 34px; margin-bottom: 2px; -unity-text-align: middle-left; color: rgb(220, 220, 220); background-color: rgba(0, 0, 0, 0); border-width: 0;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="PinnedArea" style="flex-grow: 1; padding-left: 12px; padding-right: 18px; padding-top: 4px;">
+                    <ui:Label text="Pinned" style="font-size: 16px; color: rgb(245, 245, 245); margin-bottom: 10px; -unity-font-style: bold;" />
+                    <ui:VisualElement name="TileRow1" style="height: 82px; flex-direction: row;">
+                        <ui:Button text="File Explorer" style="width: 112px; height: 76px; margin-right: 8px; color: rgb(245, 245, 245); background-color: rgb(45, 45, 45); border-width: 0; -unity-text-align: middle-center;" />
+                        <ui:Button text="Microsoft Edge" style="width: 112px; height: 76px; margin-right: 8px; color: rgb(245, 245, 245); background-color: rgb(45, 45, 45); border-width: 0; -unity-text-align: middle-center;" />
+                        <ui:Button text="Store" style="width: 112px; height: 76px; margin-right: 8px; color: rgb(245, 245, 245); background-color: rgb(45, 45, 45); border-width: 0; -unity-text-align: middle-center;" />
+                        <ui:Button text="Photos" style="width: 112px; height: 76px; color: rgb(245, 245, 245); background-color: rgb(45, 45, 45); border-width: 0; -unity-text-align: middle-center;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="TileRow2" style="height: 82px; flex-direction: row;">
+                        <ui:Button text="Mail" style="width: 112px; height: 76px; margin-right: 8px; color: rgb(245, 245, 245); background-color: rgb(45, 45, 45); border-width: 0; -unity-text-align: middle-center;" />
+                        <ui:Button text="Calendar" style="width: 112px; height: 76px; margin-right: 8px; color: rgb(245, 245, 245); background-color: rgb(45, 45, 45); border-width: 0; -unity-text-align: middle-center;" />
+                        <ui:Button text="Settings" style="width: 112px; height: 76px; margin-right: 8px; color: rgb(245, 245, 245); background-color: rgb(45, 45, 45); border-width: 0; -unity-text-align: middle-center;" />
+                        <ui:Button text="Calculator" style="width: 112px; height: 76px; color: rgb(245, 245, 245); background-color: rgb(45, 45, 45); border-width: 0; -unity-text-align: middle-center;" />
+                    </ui:VisualElement>
+                    <ui:Label text="Productivity" style="font-size: 12px; color: rgb(160, 160, 160); margin-top: 4px; margin-bottom: 6px;" />
+                    <ui:VisualElement name="ProductivityTiles" style="height: 82px; flex-direction: row;">
+                        <ui:Button text="Word" style="width: 112px; height: 76px; margin-right: 8px; color: rgb(245, 245, 245); background-color: rgb(45, 45, 45); border-width: 0; -unity-text-align: middle-center;" />
+                        <ui:Button text="Excel" style="width: 112px; height: 76px; margin-right: 8px; color: rgb(245, 245, 245); background-color: rgb(45, 45, 45); border-width: 0; -unity-text-align: middle-center;" />
+                        <ui:Button text="PowerPoint" style="width: 112px; height: 76px; margin-right: 8px; color: rgb(245, 245, 245); background-color: rgb(45, 45, 45); border-width: 0; -unity-text-align: middle-center;" />
+                        <ui:Button text="OneNote" style="width: 112px; height: 76px; color: rgb(245, 245, 245); background-color: rgb(45, 45, 45); border-width: 0; -unity-text-align: middle-center;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="StartFooter" style="height: 48px; width: 100%; flex-direction: row; align-items: center; padding-left: 18px; padding-right: 18px;">
+                <ui:Button text="User" name="UserButton" style="width: 70px; height: 36px; color: rgb(230, 230, 230); background-color: rgba(0, 0, 0, 0); border-width: 0;" />
+                <ui:VisualElement style="flex-grow: 1;" />
+                <ui:Button text="⚙" name="SettingsFooterButton" style="width: 32px; height: 22px; color: rgb(220, 220, 220); background-color: rgba(0, 0, 0, 0); border-width: 0; scale: 2 2; left: 825px; position: absolute; bottom: 53px;" />
+                <ui:Button name="PowerButton" style="width: 31px; height: 30px; color: rgb(220, 220, 220); background-color: rgba(0, 0, 0, 0); border-width: 0; background-image: url(&quot;project://database/Assets/Sprites/ChromeIcon/power-button.png?fileID=21300000&amp;guid=374dda5c77f781349a59e03811d7aa0d&amp;type=3#power-button&quot;); position: absolute; left: 825px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="CaretWin" style="flex-grow: 1; position: absolute; width: 189px; height: 99px; left: 1074px; bottom: -163px; background-color: rgb(32, 32, 32); display: none;">
+            <ui:VisualElement name="Defender" style="flex-grow: 1; left: 10px; background-color: rgba(255, 255, 255, 0); position: absolute; width: 30px; height: 30px; background-image: url(&quot;project://database/Assets/Sprites/CaretIcons/shield.png?fileID=21300000&amp;guid=384ee0537d9f71546ba9f160df521d1a&amp;type=3#shield&quot;); bottom: 56px;" />
+            <ui:VisualElement name="GPS" style="flex-grow: 1; left: 78px; background-color: rgba(255, 255, 255, 0); position: absolute; width: 30px; height: 30px; background-image: url(&quot;project://database/Assets/Sprites/CaretIcons/placeholder.png?fileID=21300000&amp;guid=c58320f6bfe105247b45847eba9842e9&amp;type=3#placeholder&quot;); bottom: 56px;" />
+            <ui:VisualElement name="AI" style="flex-grow: 1; left: 10px; background-color: rgba(255, 255, 255, 0); position: absolute; width: 30px; height: 30px; background-image: url(&quot;project://database/Assets/Sprites/CaretIcons/ai-technology.png?fileID=21300000&amp;guid=c5c5bcc732ddd5840bac1d5c115424f5&amp;type=3#ai-technology&quot;); bottom: 10px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

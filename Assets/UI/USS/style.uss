@@ -4,7 +4,7 @@
     height: 71px;
     bottom: auto;
     border-radius: 10px;
-    background-image: url("project://database/Assets/Sprites/windows%2010%20start%20logo.png?fileID=21300000&guid=45828999ffe87b544aac28b03faf4ffd&type=3#windows 10 start logo");
+    background-image: url('project://database/Assets/Sprites/windows%2010%20start%20logo.png?fileID=21300000&guid=45828999ffe87b544aac28b03faf4ffd&type=3#windows 10 start logo');
     background-color: rgba(255, 255, 255, 0);
     background-size: 85% 123%;
 }
@@ -18,4 +18,12 @@
     background-color: rgb(255, 255, 255);
     opacity: 1;
     font-size: 30px;
+}
+
+.unity-base-field__input {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    align-items: flex-start;
+    white-space: normal;
+	overflow: hidden;
 }
